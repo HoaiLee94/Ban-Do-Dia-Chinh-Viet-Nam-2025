@@ -1378,7 +1378,7 @@ function addProvinceLabels(mapGroup, validFeatures, pathGen) {
     let cy = bestCenter ? bestCenter[1] : (y0 + y1) / 2;
 
     // Tinh chỉnh tay vị trí cho một số tỉnh có trọng tâm lệch khỏi vùng nội tiếp
-    const offsets = { "Đồng Tháp": [-18, 12], "An Giang": [5, -4] };
+    const offsets = { "Đồng Tháp": [35, 15], "An Giang": [10, -2] };
     if (offsets[province.name]) {
       cx += offsets[province.name][0];
       cy += offsets[province.name][1];
