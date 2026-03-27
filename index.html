@@ -768,7 +768,10 @@
     <div id="inset-map">
       <div id="inset-label">🏝 Hoàng Sa &amp; Trường Sa</div>
     </div>
-    <div class="map-attribution">© Dữ liệu GeoJSON simplemaps.com</div>
+    <div class="map-attribution">
+      © Dữ liệu GeoJSON simplemaps.com<br>
+      Người thực hiện Lê Phạm Duy Hoài
+    </div>
   </div>
 
   <!-- Sidebar -->
@@ -1430,10 +1433,14 @@ function addProvinceLabels(mapGroup, validFeatures, pathGen) {
     lines.forEach((line, i) => {
       const yOff = lines.length === 1 ? 0
         : -((lines.length - 1) * lineH) / 2 + i * lineH;
-      g.append("text")
+      const textEl = g.append("text")
         .attr("class", "map-label-text")
         .attr("y", yOff.toFixed(1))
         .text(line);
+        
+      if (province.name === "An Giang" || province.name === "Đồng Tháp") {
+        textEl.style("font-size", "8.5px");
+      }
     });
   });
 
